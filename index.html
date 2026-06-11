@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fasam Enterprise</title>
+
+<!--
+====================================================
+PENGATURAN CEPAT
+====================================================
+
+1. Ganti foto profil:
+   assets/profile.png
+
+2. Ganti background pattern:
+   assets/background.png
+
+3. Ganti icon sosial:
+   assets/tiktok.svg
+   assets/youtube.svg
+
+4. Ganti warna utama:
+   cari :root
+
+====================================================
+-->
+
+<style>
+
+:root{
+    --bg-color:#0f0f10;
+    --card-color:#181818;
+    --text-color:#F3E5CB;
+    --text-secondary:#b4aea2;
+    --button-color:#1f1f1f;
+    --button-hover:#2a2a2a;
+    --border-color:#2b2b2b;
+}
+
+/* ==========================
+RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#F3E5CB;
+    display:flex;
+    justify-content:center;
+}
+
+/* ==========================
+KONTAINER UTAMA
+========================== */
+
+.page-wrapper{
+    width:100%;
+    max-width:500px;
+    max-height:250px;
+    min-height:100vh;
+
+    background-color:var(--bg-color);
+
+    /*
+    GANTI background image disini
+    */
+    background-image:url("assets/bg1.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+}
+
+/* ==========================
+TOP ACTION BUTTON
+========================== */
+/*
+.top-buttons{
+    position:absolute;
+    top:25px;
+    right:20px;
+
+    display:flex;
+    gap:10px;
+}
+
+.small-btn{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(0,0,0,.4);
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+}
+*/
+/* ==========================
+PROFILE SECTION
+========================== */
+
+.profile-section{
+    text-align:center;
+    padding-top:80px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/*
+FOTO PROFIL
+*/
+.profile-image{
+    width:140px;
+    height:140px;
+    margin:auto;
+  /*  border-radius:50%;
+  */
+    overflow:hidden;
+
+   /* box-shadow:
+    0 0 0 8px rgba(255,255,255,.04),
+    0 20px 50px rgba(0,0,0,.35);
+    */
+}
+
+/*
+USERNAME
+*/
+.profile-name{
+    margin-top:0px;
+
+    font-size:34px;
+    font-weight:700;
+}
+
+/*
+BIO
+*/
+.profile-bio{
+    margin-top:10px;
+
+    font-size:12px;
+    color:var(--text-secondary);
+
+    line-height:1.5;
+}
+
+/* ==========================
+SOCIAL ICON
+========================== */
+
+.social-links{
+    margin-top:25px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-links a{
+    color:#F3E5CB;
+    font-size:24px;
+    text-decoration:none;
+}
+
+/* ==========================
+LINK BUTTONS
+========================== */
+
+.links-container{
+    margin-top:40px;
+    padding:0 20px;
+}
+
+.link-card{
+    width:100%;
+
+    background:rgba(18,18,18,.95);
+
+    border-radius:18px;
+
+    margin-bottom:14px;
+
+    display:flex;
+    align-items:center;
+
+    padding:20px;
+
+    text-decoration:none;
+
+    border-radius:999px;
+    color:#F3E5CB;
+
+    transition:.2s;
+}
+
+.link-card:hover{
+    background:var(--button-hover);
+}
+
+/*
+ICON KIRI
+*/
+.link-logo{
+    width:48px;
+    height:48px;
+
+    border-radius:0%;
+
+    object-fit:cover;
+}
+
+/*
+TEX TENGAH
+*/
+.link-content{
+    flex:1;
+    text-align:center;
+}
+
+.link-title{
+    font-size:22px;
+}
+
+.link-subtitle{
+    color:var(--text-secondary);
+    font-size:14px;
+    margin-top:4px;
+}
+
+/*
+TITIK 3 KANAN
+*/
+.link-menu{
+    color:#777;
+    font-size:22px;
+}
+
+/* ==========================
+JOIN BUTTON
+========================== */
+
+.join-section{
+    padding:80px 20px 50px;
+    text-align:center;
+}
+
+.join-btn{
+    display:inline-block;
+
+    background:white;
+    color:black;
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:999px;
+
+    font-weight:700;
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+.footer{
+    text-align:center;
+
+    color:#b4aea2;
+
+    font-size:12px;
+
+    padding-bottom:40px;
+
+    margin-top:300px;
+}
+
+.footer a{
+    color:#b4aea2;
+    text-decoration:none;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:480px){
+
+    .profile-name{
+        font-size:28px;
+    }
+
+    .link-title{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- =====================
+         TOMBOL ATAS
+    ====================== -->
+
+    <div class="top-buttons">
+
+
+    <!-- =====================
+         PROFIL
+    ====================== -->
+
+    <section class="profile-section">
+
+        <!-- FOTO PROFIL -->
+        <img
+            src="assets/LogofullPNG.png"
+            alt="Profile"
+            class="profile-image"
+        >
+
+        <!-- USERNAME -->
+        <h1 class="profile-name">
+            Fasam Enterprise
+        </h1>
+
+        <!-- BIO -->
+        <p class="profile-bio">
+            Wedding Organizer & Wedding Planner based in Tangerang, Indonesia.
+            <br>
+            We specialize in unforgettable weddings. With a passion for detail, we handle every aspect of your celebration from intimate to grand bringing your dream day to life.
+        </p>
+
+    </section>
+
+    <!-- =====================
+         LINK LIST
+    ====================== -->
+
+    <section class="links-container">
+
+        <!-- LINK 1 -->
+
+        <a href="http://wa.me/6288976737981?text=Halo,%20Saya%20tertarik%20mengenai%20penawaran%20wedding%20Fasam%20Enterprise,%20bisa%20tolong%20dijelaskan%20mengenai%20produknya?"
+           class="link-card">
+
+            <img
+                src="assets/walogobulat.png"
+                class="link-logo"
+            >
+
+            <div class="link-content">
+
+                <div class="link-title">
+                    Customer Service
+                </div>
+
+                <div class="link-subtitle">
+                    Contact our team directly via WhatsApp
+                </div>
+
+            </div>
+
+            <div class="link-menu">
+                →
+            </div>
+
+        </a>
+
+        <!-- LINK 2 -->
+
+        <a href="https://drive.google.com/file/d/1iNztsZux9Q-MIqdHSTTpnkRLyTTVIuv6/view?usp=drive_link"
+           class="link-card">
+
+            <img
+                src="assets/logbooklogo.png"
+                class="link-logo"
+            >
+
+            <div class="link-content">
+
+                <div class="link-title">
+                    Logbook Fasam Enterprise
+                </div>
+                <div class="link-subtitle">
+                    Documentation & operational records
+                </div>
+            </div>
+
+            <div class="link-menu">
+                →
+            </div>
+
+        </a>
+
+        <!-- LINK 3 -->
+
+          <a href="https://drive.google.com/file/d/14ZYl8TSXYCnbnRXeck2ZhlTFmmer3NxH/view?usp=drive_link"
+           class="link-card">
+
+            <img
+                src="assets/venuelogo.png"
+                class="link-logo"
+            >
+
+            <div class="link-content">
+
+                <div class="link-title">
+                    List Venue Fasam Enterprise
+                </div>
+
+                <div class="link-subtitle">
+                    Venue references & partnerships
+                </div>
+
+            </div>
+
+            <div class="link-menu">
+                →
+            </div>
+
+        </a>
+    </section>
+
+    <!-- =====================
+         JOIN BUTTON
+    ====================== -->
+
+ <!--   <section class="join-section">
+
+        <a href="#"
+           class="join-btn">
+
+           Join duvl_ on Linktree
+
+        </a>
+-->
+    </section>
+
+    <!-- =====================
+         FOOTER
+    ====================== -->
+
+    <footer class="footer">
+
+        © 2026 PT. FASAM BERLIAN UTAMA. All Rights Reserved.
+
+    </footer>
+
+</div>
+
+</body>
+</html>
